@@ -1,0 +1,30 @@
+Nume: Mateescu F. Viorel-Cristian
+Grupa: 322CB
+
+--> Ambele functii "toString_10/16", primesc ca input un integer
+si il transforma intr-un decimal/hex. Se atribuie valoarea variabilei "temp"
+(care este un numar) la variabila n;
+    While loop, este folosit sa verifice ca valoarea lui "n", sa fie diferita de 0;
+Calculam valoarea variabilei "n" cu baza 10/16 (in functie de baza), si o atribuim tot acesteia;
+For loop, este folosit pentru conversia din integer to string, unde variabila "i = 0"
+este comparata cu valoara lui "lenght", iar daca i < lenght se executa loop ul.
+Se calculeaza modulul valorii lui "number" cu 10/16, si ii este atribuita variabilei "temp".
+Se imparte valoarea variabile "number" la baza 10/16, care ii ramane atribuita si se afiseaza.
+
+--> Functia "toConvert_int", realizeaza conversia unui integer in hex, unsigned, character, string, etc.
+Am declarat doua variabile statice char, una pentru reprezentarea stringului, iar cealalta
+reprezinta un buffer. Prin while loop, se verifica ca numarul sa fie diferit de 0, iar conversia se
+realizeaza prin modul (numar % baza), si impartirea valorii variabilei cu valoarea expresiei.
+
+--> "iocla_printf"
+In principiu, am mers pe ideea de switch, unde un "cursor_point"
+verifica fiecare argument dat functiei. Am folosit o variabila
+"count_nr" care are rolul de a da return la numarul de caractere
+aferent output-ului, folosind functia "write_stdout".
+Am declarat un vector de tip char, care sa retina valoarea
+transformarii unui integer in char (ca sa pot ulterior numara caracterele folosind count_nr).
+M-am folosit de functia strcpy, ca sa copiez conversia din fiecare int, in baza specifica fiecarui
+argument (%d, %u, %s, etc), in vectorul "str", care mai apoi il folosesc in functia "write_stdout"
+pentru al creste pe "count_nr".
+For loop si while loop au rol de a parcurge argumentele functiei, si in functie de cazuri
+sa realizeze conversiile aferente, urmate de anumite restrictii in vederea '%', '\0'.

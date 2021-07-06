@@ -1,0 +1,8 @@
+Nume: Mateescu Viorel-Cristian
+Grupa: 322CB
+
+Taks1:
+	Am folosit registrii al si ah, deoarece sunt primii 2 bytes din eax.
+Iau caracterul curent din cheie si din sir, si le pun in ah si al, facandu-le xor intre ele.
+Am pus conditia in loop pentru edx = 0, deoarece loop-ul nu mai itera prin fiecare caracter , asa ca
+il decrementam si il comparam cu 0, ca apoi sa fac jump la loop.

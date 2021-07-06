@@ -1,0 +1,26 @@
+Task1:
+	FUN_0804930f - BUFFER OVERFLOW, face sub 155 si push de 232
+
+Task2:
+	NICE_FLAG{520d60a30287c45ea668a3d076b81a79}
+
+Task3:
+	Toate functiile sunt vulnerabile, deoarece se merge pe acelasi principiu de BUFFER OVERFLOW.
+Ideea generala este ca am satisfacut conditiile de jump din primele doua functii.
+Iar cand am ajuns la a 3 a am observat ca exista declarat local stack, code * si int, deci trebuie sa dam overwrite la code* si la int
+Am pus 377 de "A" adica cat ramasese din functia anterioara + stackul de aici
+377 = 236 (parametru functie read din a doua functie ) - 167 (buffer local a 2 a functie) + 312 (buffer local a 3 a functie) - 4 bytes
+
+	NAUGHTY_FLAG{3a17b92939e828db0e1a1f2f834d39e4}
+
+Feedback:
+	Super frumoasa tema, pacat ca am facut-o fix in ultimele zile:)
+La tema am folosit GDB si Ghidra, desi sincer Ghidra s-a descurcat pretty much.
+Oricum, super tema! Keep up the good work!
+
+Also, ofer si payload-urile in python:
+Task2:
+python -c 'print "A"*564 + "\x91\x92\x04\x08"' > nice_payload
+
+Task3:
+python -c 'print "A"* 76 + "\x04\xe1\xb4\x14" + "A" * 231 + "\xda\x71\x4a\xe8" + "A" * 377 + "\x91\x92\x04\x08" + 128 * "A"  + "\x8d\x88\x5e\x97"' > naughty_payload
