@@ -1,0 +1,59 @@
+## Mateescu Viorel-Cristian
+
+# Tema 2 PA
+
+Problema 1
+
+Am folosit structura cell pentru a retine o pozitie in matrice si distanta la 
+care se afla aceasta fata de pozitia initiala.
+
+Am implementat algoritmul lui Lee pentru a determina drumul minim pe care 
+Gigel il are de parcurs pentru a ajunge pe uscat. Folosind bfs se genereaza 
+toata casutele posibile in care Gigel ajunge in functie de tipul podului pe 
+care se afla la momentul respectiv. Aceste pozitii sunt adaugate intr-o coada 
+impreuna cu distanta la care se afla fata de pozitia initiala a lui Gigel.
+Deplasarea se continua din fiecare casuta pana cand Gigel ajunge pe uscat sau 
+nu mai are nicio posibilitate de miscare. Practic podul bidirectional este o 
+combinatie intre podul orizontal (Gigel se deplaseaza pe linie) si cel vertical
+(Gigel se deplaseaza pe coloana). De precizat ca daca o pozitie l-ar duce pe 
+Gigel in apa, acesta nu ar fi valida, deci nu va fi adaugata in coada de pozitii 
+valide.
+
+Problema 2
+
+Am folosit structura client pentru a retine numele, adresele de mail si numarul 
+de adrese al fiecarui client. Principiul este urmatorul: se citesc adresele de 
+mail ale unui client si se compara cu adresele de mail ale clientilor existenti 
+deja. Daca noul client nu are match cu niciun alt client se adauga acesta in 
+lista de clienti. Altfel adresele de mail ale celor doi clienti trebuie 
+merge-uite. Se va pastra numele clietului care il are cel mai mic din punct de 
+vedere lexicografic, iar adresele noului client vor fi adaugate la adresele 
+vechiului client si se va updata numarul de adrese al acestuia. Pentru a mentine 
+adresele clientilor sortate lexicografic am folosit cate un set pentru fiecare.
+In final se sorteaza clientii reali folosind o functie de sortare: mai intai dupa 
+numarul de adrese, apoi lexicografic dupa nume.
+
+Problema 3
+
+Folosind backtracking-ul din laborator se genereaza toate combinarile de x dimensiuni 
+de baza care incep cu 1. Dimensiunea maxima a unei piese ce poate fi construita cu o 
+solutie generata din acest backtracking este numarul maxim de piese ce pot fi utilizate 
+* dimeniunea celi mai meri piese de baza (ultima valoare din solutiile generate 
+pentru combinari). Folosind un al doilea backtracking generez toata dimensiunile 
+posibile ce pot fi obtinute cu piesele din solutie respectand conditia de a folosi maxim T 
+piese. Daca o piesa poate fi generata voi avea True in array[piesa respectiva], altfel False.
+Apoi calculez numarul maxim de True-uri consecutive din array si updatez maximul global si 
+solutia globala daca este necesar.
+
+Problema 4
+
+Principiul este urmatorul: izolez pe rand cate un nod (adica nu il iau in calcul la 
+parcurgerea dfs) si generez numarul de conexiuni pentru fiecare componenta conexa din 
+graf dupa izolarea nodului respectiv folosind dfs. Numarul de conexiuni pierdute este 
+numarul initial de conexiuni nr_noduri * (nr_noduri - 1) - suma(conexiunilor pentru 
+fiecare componenta conexa).
+
+Din pacate solutiile mele nu sunt optime si primesc timeout in cele mai multe cazuri.
+Punctaj local: 90.
+
+
