@@ -1,0 +1,41 @@
+EUR 1.0
+GBP 1.15
+TRY 0.11
+€123.83
+fa80dfb2a2c7919771a3f98833f5d834,Bane Special Edition Display Mask,Noble Collection,€373.57,3
+e06e79f082daf2568c4177e3f3b4ecac,Harry Potter Final Challenge Chess Set,Noble Collection,€335.17,4
+431e2f4cab482c56a4e41b33781ae1b1,Harry Potter Hogwarts Bookmarks,Noble Collection,€21.27,13
+fe84f2778ae98f212baef87f55f1741d,Diagon Alley Wall Plaque Harry Potter The Noble Collection,Noble Collection,€46.00,10
+e14b2c94ac5a738a7c2317fa7510596c,Hermione Time Turner Harry Potter The Noble Collection,Noble Collection,€50.60,20
+8ccacf4e95d4914e4094e0b037501c25,Drogon Egg Game Of Thrones The Noble Collection,Noble Collection,€48.30,8
+1d7b3f0821b2f66d2443eca1069c4304,Stark Sigil Pendant (costume) Game of Thrones The Noble Collection,Noble Collection,€12.07,15
+b11990bb904deecae1f105450c77ddcc,Orcrist 36" Prop Replica The Hobbit The Noble Collection,Noble Collection,€199.42,3
+dc258acfe46dd49d0dd41ab987061215,1 X Harry Potter Hogwarts Houses Gryffindor Gold Plated Pen,Noble Collection,€22.99,2
+e9ad4b94a6727d51ca1a972a87d18584,Ravenclaw Crest Keychain Harry Potter The Noble Collection,Noble Collection,€10.35,12
+b919e273733731ba9b75b6c4cb319f73,Proffesor Remus Lupin Character Wand. Harry Potter The Noble Collection,Noble Collection,€32.27,12
+debdd5dc7adae2e92ef590ce4612dd5c,Lavender Brown Character Wand. Harry Potter Noble Collection.,Noble Collection,€31.04,0
+4a5a468ea432155a8494ce3b0d157df3,Bullyland Disney Princess Deluxe Set,Bullyland,₺15.33,5
+EUR 1.0
+GBP 1.15
+TRY 1.5
+USD 0.88
+GBP
+4a5a468ea432155a8494ce3b0d157df3,Bullyland Disney Princess Deluxe Set,Bullyland,£19.99,5
+PERCENTAGE_DISCOUNT 75.0 "75% Final sales" null
+£55.96
+TRY
+PERCENTAGE_DISCOUNT 75.0 "75% Final sales" 2021-01-24T19:35:31.517924100
+PERCENTAGE_DISCOUNT 25.0 "25% Turkish Bazaar" null
+FIXED_DISCOUNT 5.0 "-5 For tourists" null
+PERCENTAGE_DISCOUNT 75.0 "75% Final sales" 2021-01-24T19:35:31.517924100
+PERCENTAGE_DISCOUNT 25.0 "25% Turkish Bazaar" 2021-01-24T19:35:31.908873600
+FIXED_DISCOUNT 5.0 "-5 For tourists" null
+189eb85361ee696975680bd44148bf35,Bakugan Booster Pack - B3 BAKULYTE Series - Translucent Subterra STUG (Clear Brown),Bakugan,₺2.87,0
+b3b21788802cab355964ae4e52a80a92,Bakugan Booster Pack - B3 BakuSolar Series - Subterra KLAWGOR (Translucent Orange),Bakugan,₺2.29,0
+1d225efdf7e8489452aece0f91a885b1,Bakugan Battle Arena,Bakugan,₺5.10,4
+3cd4507bc188277d64605c72f5260184,Bakugan Bakucase,Bakugan,₺5.74,5
+85c21a29bb323a96ef4e652a17ac3358,Bakugan Gundalian Invaders Bakutriad, Triple Pack,Bakugan,₺4.59,4
+3c56ce57facd11e921cd0af9336e161a,Bakugan Gundalian Invaders BakuBoost,Bakugan,₺3.44,6
+90e1ebe06b64d840092915db2ffa6e0a,Bakugan - Mechtanium Surge - Swipe and Battle - Mechtogan - with Real Die-Cast - Blue/Grey - Venexus - 02 - Auto Transforms!,Bakugan,₺8.04,0
+fdcee51ec73126343bd390d25bb7c63f,Bakugan Bakucapsule,Bakugan,₺5.47,3
+17b31a096bfe7cfd2fd884a7c8f37036,Pokemon XY 2014 Kalos Power Tin Delphox-EX,Pokémon,₺8.34,7
