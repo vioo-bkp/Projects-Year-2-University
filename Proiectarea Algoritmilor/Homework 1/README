@@ -1,0 +1,143 @@
+## Tema 1 PA - Gigel si muntele de bani
+# Mateescu Viorel-Cristian
+
+1. Problema 1 - Gigel si criptomonedele
+
+Am citit numarul de calculatoare de care dispune Gigel apoi am creat un vector 
+de perechi < numar maxim de monede produse intr-o ora, costul de upgrade al 
+calculatorului >. Am sortat acest vector crescator in functie de numarul de 
+monede produse pe ora de fiecare calculator. 
+
+Numarul de monede pe care il poate produce reteaua intr-o ora este dat de 
+numarul de monede pe care il produce primul calculator din vectorul sortat.
+Astfel upgradez pe rand cate un calculator si verific daca investitia pana la 
+momentul respectiv se incadreaza in bugetul lui Gigel. In momentul in care 
+toate calculatoarele vor avea ca numar maxim de monede produse intr-o ora 
+acelasi numar le voi upgrada pe toate simultan (nu voi mai itera prin vectorul 
+de calculatoare). 
+
+Pentru a nu parcurge intreg vectorul atunci cand incerc sa upgradez mai multe 
+PC-uri folosesc un cost total de upgrade pe care il updatez de fiecare data 
+cand upgradez pentru prima oara un PC. Astfel daca vreau sa upgradez PC-ul i 
+pentru prima data, deja am costul de upgrade pentru primele i - 1 PC-uri 
+(a fost posibil acest lucru deoarece vectorul este sortat: daca vreau sa 
+upgradez un PC cu costul de upgrade x trebuie upgradate mai intai toate 
+PC-urile al caror cost de upgrade <= x).
+
+Sortarea are complexitate O(N * log(N)) deoarece am folosit functia sort din 
+C++.
+
+Solutia propusa de mine are complexitate O(N).
+
+N = numarul de elemente din vector
+
+2. Problema 2 - Gigel investeste la bursa
+
+Am citit numarul de actiuni existente, bugetul lui Gigel si suma maxima de 
+bani pe care isi permite sa o piarda, apoi am citit pentru fiecare actiune 
+pretul curent, pretul minim si pretul maxim si le-am salvat in 3 vectori.
+Pentru a obtine castigul/pierderea efectiv(a) am facut pentru fiecare actiune
+urmatoarul calcul si l-am salvat in vectorii de pret minim/maxim: 
+abs(pret curent - cost), unde cost este pretul minim/maxim al actiunii 
+respective.
+
+Determinarea castigului maxim se realizeaza folosind tehnica de programare 
+dinamica. Este problema rucsacului discutata la laborator, dar cu 2 
+constrangeri (costul actiunilor cumparate <= bugetul lui Gigel, respectiv 
+pierderea maxima pe care o poate inregistra Gigel <= o valoare stabilita de 
+el) => matricea dp trebuie sa fie tridimendionala.
+
+dp[i][j][k] = profitul maxim obtinut cumparand (doar o parte) din primele i 
+actiuni, folosind maxim j dolari din economiile lui Gigel si o pierdere maxima 
+egala cu k dolari.
+
+Daca Gigel nu cumpara o actiune i avem aceeasi solutie ca la pasul anterior: 
+dp[i][j][k] = dp[i - 1][j][k].
+
+Daca Gigel cumpara actiunea i trebuie verificat daca se incadreaza in bugetul 
+sau si daca nu depaseste pierderea maxima pe care si-o poate permite. Adica 
+atunci cand am selectat dintre primele i − 1 actiuni, nu trebuia sa consum mai 
+mult de (j - currentValue[i - 1]) din buget si sa nu am o potentiala pierdere 
+maxima mai mare decat (k - minValue[i - 1]). Fata de subproblema mentionata, 
+castig in plus maxValue[i] (profitul pe care il poate aduce aceasta actiune):
+dp[i][j][k] = max(dp[i - 1][j][k], 
+				  dp[i - 1][j - currentValue[i]][k - minValue[i]] + 
+				  maxValue[i];
+
+Solutia problemei se gaseste in dp[N][B][L] (profitul maxim cumparand doar o 
+parte din actiunile disponibile).
+
+Complexitatea solutiei mele este O(N * B * L).
+
+N = numarul de actiuni
+B = bugetul lui Gigel
+L = pierderea maxima pe care si-o permite Gigel
+
+3. Problema 3 - Gigel merge la munte
+
+Am citit numarul de munti, apoi inaltimile muntilor si le-am stocat intr-un 
+vector. Pentru a determina punctul de intersectie al prefixului cu sufixul am
+cautat un minim in vector, dar care nu este pe prima sau pe ultima pozitie din
+acesta pentru a respecta conditia ca prefixul si sufixul sa ocupe cel putin 
+doua pozitii.
+
+Prima data am transformat prefixul (valley[0] -> valley[pozitie comuna]) 
+intr-o secventa de inaltimi descrescatoare comparand inaltimea fiecarui munte 
+cu cea a predecesorului sau. Excavarea minima pe care Gigel ar fi nevoit sa o 
+faca este pentru a aduce cei doi munti la acelasi nivel, deci timpul necesar 
+ar fi: valley[i] - valley[i - 1]. Am adunat timpul necesar pentru toate 
+excavarile si am obtinut timpul necesar pentru aceasta etapa.
+
+Apoi am transformat sufixul (valley[pozitie comuna] -> valley[N]) intr-o 
+secventa de inaltimi crescatoare. Tehnica abordata de mine a constat de fapt 
+in obtinerea unei secvente descrescatoare de la dreapta la stanga (in sens 
+invers obtinand una crescatoare). Astfel compar inaltimea fiecarui munte cu 
+cea a predecesorului sau. Excavarea minima pe care Gigel ar fi nevoit sa o 
+faca este pentru a aduce cei doi munti la acelasi nivel, deci timpul necesar 
+ar fi: valley[i - 1] - valley[i]. Am adunat timpul necesar pentru toate 
+excavarile si am obtinut timpul necesar pentru aceasta etapa.
+
+Complexitatea solutiei propusa de mine este O(N).
+
+N = numarul de munti
+
+4. Problema 4 - Gigel si creasta montana
+
+Am citit numarul de munti, apoi am citit inaltimea si costul de excavatie 
+pentru fiecare munte.
+
+Determinarea costului minim de excavatie se realizeaza folosind tehnica de 
+programare dinamica. Pentru a obtine conditia de creasta montana (nu exista 
+doi munti adiacenti de aceeasi inaltime) pot fi necesare 0, 1 sau maximum 2 
+sapaturi in fiecare munte.
+
+Exemple:
+4 3 4 => 0 sapaturi
+4 4 4 => 1 sapatura (4 3 4)
+3 4 4 3 => 2 sapaturi (3 2 4 3 de exemplu)
+
+Avem cazurile de baza:
+	dp[0][0] = 0, nu se exacaveaza in primul munte.
+	dp[0][1] = costs[0], se excaveaza o singura data in primul munte
+	dp[0][2] = costs[0] * 2, se excaveaza de doua ori in primul munte.
+
+Cazul general:
+	- daca nu se pot face j sapaturi intr-un munte i (j E [0,2]) setam 
+	  dp[i][j] la cea mai mare valoare posibila.
+	
+	- daca se pot face j excavatii in muntele i se calculeaza costul minim de 
+	  excavatie la pasul anterior:
+	  	- se verifica daca prin excavarea a j unitati in muntele i se obtine o 
+	  	  valoarea diferita de cea obtina la pasul anterior prin excavarea a k 
+	  	  unitati in muntele (i - 1) si daca exacavarea a k unitati este 
+	  	  posibila in muntele (i - 1). Costul minim de excavatie la pasul 
+	  	  anterior va fi egal cu minimul dintre costurile excavarilor posibile.
+	- Costul minim de excavatie la pasul i cu j unitati excavate este: 
+	  dp[i][j] = j * costs[i] + costul minim la pasul anterior.
+
+Costul minim de excavatie pentru a obtine o creasta montana este minimul 
+dintre cele 3 costuri obtinute pe linia N - 1.
+
+Complexitatea solutiei mele pentru acesta problema este O(N).
+
+N = numarul de munti
