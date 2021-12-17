@@ -1,5 +1,4 @@
 ## Travelling Service Project
-Mateescu Viorel-Cristian
 
 # 1. Project Description
 
