@@ -1,5 +1,7 @@
 ## Travelling Service Project
 
+Mateescu Viorel-Cristian
+
 # 1. Project Description
 
 This is my implementation of a Travelling service application similar to Bolt, Uber, Taxify etc. The main idea of this
@@ -55,7 +57,7 @@ Object Oriented Programming Concepts that were used in the making of this projec
                             types of Traffic jams).
 
 # The Map
-    The city map is composed of the number of nodes and the array of nodes. These nodes are interconnected to each other
+The city map is composed of the number of nodes and the array of nodes. These nodes are interconnected to each other
 by streets.
     A street can be added to the map by creating a new street and adding it to the corresponding node's street list(the
 node from which the street begins, its start node).
@@ -81,19 +83,19 @@ cheapest path from the start node(source node) to the rest of the nodes. The str
 travelling.
 
 # The Nodes
-    As I said earlier the Map consists of an array of Nodes. These nodes have an index, a street list(containing the
+As I said earlier the Map consists of an array of Nodes. These nodes have an index, a street list(containing the
 streets that begin from that node) and a cost(defining the cost to get from the start node to the current node in the
 Dijkstra algorithm, also it represents its priority is the Priority Queue). I chose to implement it in this way so it
 would be easier to compare two nodes when inserting one in the Priority Queue via the compareTo function.
 
 # The Streets
-    Each of them is defined by two Nodes: the street's start node(beginning) and its end node(end). Every street has its
+Each of them is defined by two Nodes: the street's start node(beginning) and its end node(end). Every street has its
 own cost and a value that defines the size of the heaviest vehicle that may be driven on that street(TrafficRestriction).
 On a street 3 types of TrafficJams may happen: Accident, Jam and Traffic. These Traffic jams add an extra cost when a
 vehicle is driven on that street.
 
 # The Priority Queue
-    In order to keep the nodes in ascending order of their costs reported to the start node in the Dijkstra Algorithm I
+In order to keep the nodes in ascending order of their costs reported to the start node in the Dijkstra Algorithm I
 implemented my own Generic Min Priority Queue. This class implements all the methods that any type of Queue should have
 (defined in the Queue Interface). It uses a basic List from Java to store its elements. I made it generic so it could be
 used on any data type that implements the Comparable Interface.
@@ -112,26 +114,26 @@ priority and it should be inserted at the end of the queue.
         - accessing and removing the first element from the priority queue(poll = peek + remove).
 
 # The Queue Interface
-    It is used for grouping all the basic methods specific to this type of data structure(There many types of queues:
+It is used for grouping all the basic methods specific to this type of data structure(There many types of queues:
 Simple Queue, Circular Queue, Priority Queue etc): insertion(add), extraction(remove and poll) and inspection
 operations(isEmpty, peek and size).
 
 # The Vehicles
-    Abstract Base Class that stores a type of vehicle, extended by the types of vehicles existing in the city: Bicycle,
+Abstract Base Class that stores a type of vehicle, extended by the types of vehicles existing in the city: Bicycle,
 Motorcycle, Car and Truck. I set its cost and size fields to final so they could be set only once at the creation of the
 vehicle(like in the daily life, for example a car cannot lose weight:))). Only the class extending it can be
 instantiated, it is a base class for them.
 
 # The Traffic restriction
-    Creates a Traffic restriction for a Street in a city. A Traffic restriction is defined by a cost(the cost to travel
+Creates a Traffic restriction for a Street in a city. A Traffic restriction is defined by a cost(the cost to travel
 that street) and by the size of the heaviest Vehicle that may be driven on that street.
 
 # The Traffic jam
-    It is an abstract Base Class that stores a generic type of traffic jam, extended by the types of traffic jams that
+It is an abstract Base Class that stores a generic type of traffic jam, extended by the types of traffic jams that
 may happen on the streets of a city: Accident, Jam and Traffic. I set its cost field to final so it could be set only
 once at the creation of the Traffic jam. Only the class extending it can be instantiated, it is a base class for them.
 
 # The Main
-    It is used for reading data for the map from the input file, creating it, adding Traffic jams on the streets of the
+It is used for reading data for the map from the input file, creating it, adding Traffic jams on the streets of the
 city, driving a vehicle from a node to another one within the city and printing the path to travel and the travelling
 cost into the output file.
