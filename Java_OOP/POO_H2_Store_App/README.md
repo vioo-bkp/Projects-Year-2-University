@@ -1,6 +1,5 @@
 ## Programare Orientata pe Obiecte
-Tema 2 - Store Application
-Mateescu Viorel-Cristian 
+### Tema 2 - Store Application
 
 # amazon_co-ecommerce_sample.csv.
 
