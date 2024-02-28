@@ -1,0 +1,15 @@
+listcurrencies
+getstorecurrency
+addcurrency GBP £ 1.10
+listcurrencies
+loadcsv amazon_co-ecommerce_sample.csv
+addcurrency JPY ¥ 0.007
+savestore saved_store.bin
+setstorecurrency JPY
+showproduct eac7efa5dbd3d667f26eb3d3ab504464
+addiscount PERCENTAGE 60 "60% Anul nou chinezesc"
+applydiscount PERCENTAGE 60
+loadstore saved_store.bin
+showproduct eac7efa5dbd3d667f26eb3d3ab504464
+listproductsbymanufacturarer Yu-Gi-Oh!
+quit

@@ -1,0 +1,30 @@
+addcurrency GBP £ 1.15
+addcurrency TRY ₺ 0.11
+listcurrencies
+loadcsv amazon_co-ecommerce_sample.csv
+updateparity TRY 1.5
+calculatetotal 9d4668fe207171bc9b84fbe5e1d58a81 e9e836ee06902c179618e6db380a9bd6 0a998c08f40aeb9ff27ffeeca885889c
+listproductsbymanufacturarer Noble Collection
+setstorecurrency TRY
+showproduct 4a5a468ea432155a8494ce3b0d157df3
+savestore turkish_boutique.bin
+addcurrency USD $ 0.88
+listcurrencies
+setstorecurrency GBP
+getstorecurrency
+showproduct 4a5a468ea432155a8494ce3b0d157df3
+listdiscounts
+addiscount PERCENTAGE 75 "75% Final sales"
+listdiscounts
+applydiscount PERCENTAGE 75
+calculatetotal bcb2614d2fd05f413c2ecd79fd0aab7c 2755ad6c6a3359dfc3f05740557a94f3
+loadstore turkish_boutique.bin
+getstorecurrency
+addiscount PERCENTAGE 25 "25% Turkish Bazaar"
+addiscount FIXED 5 "-5 For tourists"
+listdiscounts
+applydiscount PERCENTAGE 25
+listdiscounts
+listproductsbymanufacturarer Bakugan
+showproduct 17b31a096bfe7cfd2fd884a7c8f37036
+exit

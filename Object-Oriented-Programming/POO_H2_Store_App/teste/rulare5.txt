@@ -1,0 +1,50 @@
+listcurrencies
+getstorecurrency
+addcurrency GBP £ 1.15
+addcurrency USD $ 0.86
+listcurrencies
+setstorecurrency USD
+loadcsv amazon_co-ecommerce_sample.csv
+savestore american_dream_store.bin
+setstorecurrency GBP
+getstorecurrency
+savecsv store_prices_gbp.csv
+savestore british_store.bin
+updateparity GBP 1.09
+listcurrencies
+listproducts
+showproduct 64fc7bf1db1566d1d6af27b244e2cb9e
+listmanufacturers
+listproductsbymanufacturarer Bicycle
+listdiscounts
+addiscount PERCENTAGE 90 "90% Clearance"
+addiscount FIXED 15 "-15 Fidelity Coupon"
+listdiscounts
+applydiscount PERCENTAGE 90
+listdiscounts
+showproduct 4a5a468ea432155a8494ce3b0d157df3
+calculatetotal 90093bd02c6d5ce6d6c8f2e2af411fc1 ac8f50728ebbe615521d0891dbea8543 f99c5e5f5af06b6d966c9c28b93907ae
+loadstore american_dream_store.bin
+getstorecurrency
+addiscount PERCENTAGE 80 "80% Make America great again"
+showproduct c1f5f6e8b0483e893421e8d2dd0366ab
+listproductsbymanufacturarer Beyblade
+calculatetotal a92aca3bc5e77135e5ad0afba7ff610e 8ba6b0b4ad8908a2cfa8e2e3feea02a0
+listproducts
+listcurrencies
+showproduct 750ce68c375d3fbb109d05fc245353df
+listcurrencies
+listproductsbymanufacturarer ToyPost
+updateparity GBP 1.50
+getstorecurrency
+showproduct 2289b5990841b83829a0ca803f45f8fb
+addiscount PERCENTAGE 5 "5% Referral Code"
+listdiscounts
+savecsv toystore.csv
+applydiscount PERCENTAGE 5
+showproduct 96b4b51fdc29f555c5df447d1f73aaa4
+calculatetotal ffa0ca1b8880128b98f1cab3251057f4 7d9ca1252bfbb625a190c9b0cbbac164
+listproducts
+addiscount FIXED 12 "-12 Sunny Day"
+listdiscounts
+exit
