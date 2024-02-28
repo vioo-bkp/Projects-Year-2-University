@@ -5,9 +5,8 @@ This repository contains the projects, courses, and homework assignments from th
 ## Features
 
 - **License:** MIT (vioo-bkp, Contact: cristian.viorel@pm.me)
-- **Languages:** C/C++, Octave/Matlab
+- **Languages:** C/C++,Python, Assembly, Java, Octave/Matlab
 - **Platforms:** Linux, Windows
-- **Compiler:** GCC
 - **IDE:** VSCode, Sublime Text
 - **Build:** Makefile
 
